@@ -34,13 +34,6 @@ RSpec.feature "", type: :feature do
     expect(page).to have_content user.name
   end
 
-  scenario "navbar Logout link logs user out" do
-    #sign_up
-    #log_in
-    #click_link "Log out"
-    #expect(session[:user_id]).to eq nil
-  end
-
   def check_link_path(link, path)
     click_link link
     expect(current_path).to eq path
