@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     shout "show page loaded"
-    @user = User.find(params[:id])
+    @profile = User.find(params[:id])
     @posts = Post.all
     @users = User.all
     #@user = User.find(session[:user_id])

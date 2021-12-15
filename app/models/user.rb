@@ -11,13 +11,13 @@ class User < ApplicationRecord
 
   def image_type
     if image.attached? == false
+      # puts "MAIN ERROR: #{errors.count}"
+      # errors.each {|x| puts "Here are the errors: #{x}" }
       errors.add(:image, "are missing!")
     else
-    # images.each do |image|
       if !image.content_type.in?(%('image/jpeg image/png image/gif'))
         errors.add(:image, "Needs to be a JPEG, PNG or GIF")
       end
-    # end
     end
   end
 end
