@@ -14,18 +14,34 @@
     <div class="id_post_view">
       <% @posts.reverse.each do |post| %>
         <% if post.loc_id == @user.id %>
-          <div class="post_container">
-            User <%= post.name %>: <%= link_to post.message, post %>
-            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
+          <div class="post_container" >
+            <div class="post_container_user">
+              pic here <%= post.name %>:
+            </div>
+            <hr>
+            <div class="post_container_text">
+            <%= link_to post.message, post %>
+            </div>
+
+            <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
+            <% post.comments.each do |comment| %>
+              <div class="comment_container">
+                <%= comment.name %>: <%= comment.comment_body %>
+              </div>
+            <% end %>
           </div>
+
         <% end %>
+
       <% end %>
+
     </div><br>
   </div>
 
 <div class="profile_inner_header_right">
-  <div>
-    Your Friends:
+  <div class="post_container_text" style="text-align: center">
+    <h3>Your Friends:</h3>
+    <hr>
     <ul>
       <% @users.each do |user| %>
         <% if user.id != session[:user_id] %>

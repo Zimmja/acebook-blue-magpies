@@ -79,7 +79,7 @@
 
 /* mouse over link */
 .navigation a:hover {
-    color: navy;
+    color: #191970;
 }
 
 body{
@@ -112,6 +112,8 @@ body{
 }
 
 .post_container{
+    text-align: left;
+    color: #2e75b6;
     border-radius: 10px;
     background: white;
     padding: 5px;
@@ -120,7 +122,67 @@ body{
     width: 75%;
     margin-top: 10px;
 }
+.post_container_user {
+    text-align: left;
+    color: #2e75b6;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    width: 97%;
+}
+.post_container_text{
 
+    text-align: left;
+    color: #2e75b6;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+    width: 99%;
+}
+.post_container_text a:link{
+    color: #2e75b6;
+}
+.post_container_text a:visited{
+    color: #2e75b6;
+}
+
+.post_container_text a:hover{
+    color: #191970;
+    font-weight: bold;
+}
+
+
+
+
+
+.post_container_likes {
+
+    text-align: left;
+    color: #2e75b6;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+    width: 99%;
+}
+.comment_container{
+    text-align: left;
+    color: #2e75b6;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 5px 3px 2px lightgrey;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    height: 100%;
+    width: 90%;
+
+    margin-top: 10px;
+    font-size: 14px;
+}
 .form_input [type=password] {
     width: 95%;
     padding: 10px 5px;
@@ -185,6 +247,7 @@ input[type=submit] {
 }
 
 .profile_inner_header_right {
+    color: #2e75b6;
     width: 25%;
     display: block;
     margin: 0 auto;
