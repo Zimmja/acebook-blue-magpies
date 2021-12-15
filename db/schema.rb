@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_212500) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "images"
     t.integer "user_id"
     t.integer "loc_id"
   end
