@@ -22,7 +22,9 @@ class UsersController < ApplicationController
     if @user.save
       shout "saved new user"
       session[:user_id] = @user.id
-      login_url @user
+      session[:current_user_id] = @user.id
+      session[:current_user_name] = @user.name
+      # login_url @user
       redirect_to @user
     else
       shout "failed to save new user"
