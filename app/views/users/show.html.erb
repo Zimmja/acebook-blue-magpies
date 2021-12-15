@@ -1,6 +1,5 @@
 <% session[:current_profile] = @user.id %>
 
-<h1>Welcome to <span style="color: #191970">Blue-Magpie Acebook!</span></h1>
 <h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> profile</h1>
 
 <p>Your Wall</p>

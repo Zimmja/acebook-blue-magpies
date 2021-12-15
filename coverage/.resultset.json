@@ -377,7 +377,7 @@
           null,
           null,
           1,
-          13,
+          8,
           null,
           null,
           1,
@@ -411,7 +411,7 @@
           null,
           null,
           1,
-          58,
+          53,
           4,
           4,
           null,
@@ -428,11 +428,11 @@
           1,
           null,
           1,
-          734,
+          709,
           null,
           null,
           1,
-          496,
+          481,
           null,
           null,
           1,
@@ -863,6 +863,7 @@
         "lines": [
           1,
           1,
+          1,
           null
         ]
       },
@@ -1074,38 +1075,8 @@
           null,
           null
         ]
-      },
-      "/Users/ginnythomas/Documents/Projects/Makers-Bootcamp/Team-Project/acebook-blue-magpies/app/controllers/likes_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          5,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1639563069
+    "timestamp": 1639564513
   }
 }
