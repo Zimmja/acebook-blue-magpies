@@ -1,10 +1,27 @@
+<% session[:current_profile] = session[:user_id] %>
 
   <h1> User name: <%= @post.name %> </h1>
   <h3>Message: <%= @post.message %> </h3>
-<%= button_to "Like", post_likes_path(@post), method: :post %><br> <%= button_to "Edit Post", edit_post_path %>
+<%= form_with model: [ @post, @post.likes.build ], local: true do
+|form|  %>
+  <p>
+    <%= form.hidden_field :user_id, value: session[:current_user_id] %>
+    <%= form.select :like_option, [['Reacts'], ['Like', 'Like'], ['Love', 'Love'], ['Ha, Ha', 'Ha, Ha'], ['Sad', 'Sad']], {},
+        :onchange=>"javasccript: this.form.submit();" %>
+      <%#= found resource https://stackoverflow.com/questions/6959481/rails-trying-to-submit-a-form-onchange-of-dropdown %>
+      <%#= the like goes to the DB, i.e. like id and like table gets larger, but like_option is not filling in on DB %>
+    <%= form.submit "Like", hidden:true %>
+    <%= @post.likes.count %>
+  </p>
+<% end %>
+
+<!--the next line is the old like button - it was going to a database table, but was not associating a user_id. -->
+<%#<%= button_to "Like_old", post_likes_path(@post), method: :post %>
+
+<%= button_to "Edit Post", edit_post_path %>
 <br>
 <%= button_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? "Like" : "Likes" %></p>
+<p>
 
 <h2>Images</h2>
 
@@ -17,7 +34,6 @@
 
 <br>
 <br>
-
 
 <%(0...@post.images.count).each do |image| %>
 <%= image_tag(@post.thumbnail(image)) %>
