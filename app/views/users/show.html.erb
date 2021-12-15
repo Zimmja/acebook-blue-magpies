@@ -1,33 +1,38 @@
 <% session[:current_profile] = @user.id %>
 
 <h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> profile</h1>
-
-<p>Your Wall</p>
-
-  <div class="id_post_view">
-    <% @posts.reverse.each do |post| %>
-      <% if post.loc_id == @user.id %>
-        <div class="post_view">
-          User <%= post.name %>: <%= link_to post.message, post %>
-          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div><br>
-
-  <div> 
+<div class="profile_header">
+  <div class="profile_inner_header_left">
+  <%# <p>Your Wall</p> %>
+  <div class="new_post_button"> 
     <%= link_to new_post_path do %>
       New post
     <% end %>
-  </div><br>
+  </div>
+  <br>
+  <br>
+    <div class="id_post_view">
+      <% @posts.reverse.each do |post| %>
+        <% if post.loc_id == @user.id %>
+          <div class="post_container">
+            User <%= post.name %>: <%= link_to post.message, post %>
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div><br>
+  </div>
 
+<div class="profile_inner_header_right">
   <div>
     Your Friends:
     <ul>
       <% @users.each do |user| %>
         <% if user.id != session[:user_id] %>
-          <li><%= link_to user.name, user  %></li>
+          <li><%= link_to user.name, user %></li>
         <% end %>
       <% end %>
     </ul>
   </div>
+</div>
+</div>

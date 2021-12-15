@@ -68,17 +68,17 @@
     font-weight: 600;
 }
 
-a:link {
+.navigation a:link {
     color: white;
 }
 
 /* visited link */
-a:visited {
+.navigation a:visited {
     color: white;
 }
 
 /* mouse over link */
-a:hover {
+.navigation a:hover {
     color: navy;
 }
 
@@ -86,16 +86,16 @@ body{
     background-color: lightgrey;
 }
 
-.inner_page{
+.inner_page {
     margin-top: 20px;
     padding: 5px;
-    width: 75%;
+    width: 95%;
     height: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    background-color: white;
+    /* background-color: rgb(160, 32, 70); */
     border-radius: 10px;
 }
 
@@ -112,12 +112,13 @@ body{
 }
 
 .post_container{
-    margin-top: 2px;
     border-radius: 10px;
     background: white;
     padding: 5px;
+    margin: auto;
     height: 100%;
-    width: 100%;
+    width: 75%;
+    margin-top: 10px;
 }
 
 .form_input [type=password] {
@@ -172,12 +173,32 @@ input[type=submit] {
     background-color: white;
 }
 
-.profile_inner_header{
-    width: 95%;
-    height: 100px;
+.profile_inner_header_left {
+    width: 70%;
     display: block;
     margin: 0 auto;
-    background-color: purple;
+    /* background-color: purple; */
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+.profile_inner_header_right {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    float: right;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile_inner_header_right li
+{
+    padding: 5px;
 }
 
 .profile_pic_container_left{
@@ -274,4 +295,28 @@ h1, h2
     color: #203964;
     text-align: center;
     margin: 50px, 0px, 5px, 0px;
+}
+
+.new_post_button a
+{
+    background-color: #191970;
+    width: 50%;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 3px, 3px, #666666;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 20px;
+    float: center;
+    border: none;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    top: 20px;
+    padding: 10px;
+}
+
+.new_post_button a:hover
+{
+    color: green;
 }

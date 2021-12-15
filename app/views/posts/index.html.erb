@@ -4,7 +4,7 @@
 
   <% @posts.reverse_each do |post| %>
     <% if post.loc_id == post.user_id %>
-      <li>
+      <li class="post_container">
         <%= link_to post.message, post %>
         <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
       </li>
