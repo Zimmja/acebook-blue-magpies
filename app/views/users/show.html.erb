@@ -1,12 +1,12 @@
 <% session[:current_profile] = @user.id %>
 
-<h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> profile</h1>
+<h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> Profile</h1>
 <div class="profile_header">
   <div class="profile_inner_header_left">
   <%# <p>Your Wall</p> %>
   <div class="new_post_button"> 
     <%= link_to new_post_path do %>
-      New post
+      Post to this wall
     <% end %>
   </div>
   <br>
@@ -22,7 +22,6 @@
             <div class="post_container_text">
             <%= link_to post.message, post %>
             </div>
-
             <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
             <% post.comments.each do |comment| %>
               <div class="comment_container">
@@ -30,11 +29,8 @@
               </div>
             <% end %>
           </div>
-
         <% end %>
-
       <% end %>
-
     </div><br>
   </div>
 
