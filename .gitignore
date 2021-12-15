@@ -22,5 +22,5 @@
 
 .byebug_history
 
-Gemfile.lock
+# Gemfile.lock
 coverage
