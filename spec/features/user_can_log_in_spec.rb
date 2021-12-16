@@ -7,7 +7,10 @@ RSpec.feature "Logging in", type: :feature do
   end
 
   scenario "User can't log in with incorrect details'" do
-    sign_up(true, {:name => "none", :email => "none", :password => "none"})
+    visit '/login'
+    fill_in "email", with: "abcdefg"
+    fill_in "password", with: "hijklmnop"
+    click_button "Log In"
     expect(current_path).to eq "/login"
   end
 end

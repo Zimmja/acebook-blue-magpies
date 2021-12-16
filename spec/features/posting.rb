@@ -1,7 +1,6 @@
-def new_post(message, then_click = false)
-  # expect(current_path).not_to eq "/login"
-  click_link "New post"
+def new_post(message, button = "New post", then_click = false)
+  click_link button
   fill_in "Message", with: message
   click_button "Create a Post"
-  click_link message if then_click
+  first(:link, message).click if then_click
 end

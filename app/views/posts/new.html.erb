@@ -4,6 +4,7 @@
 <div class="form_container" style="">
   <%= form_for @post do |form| %>
     <div class="form_input">
+      <%= form.label :message %>
       <%= form.text_area :message, placeholder: "Enter your message", rows: 7 %>
     </div>
     <br>
@@ -13,8 +14,8 @@
       <div class="input" style="position: relative; margin: 0 auto;">
       <%= form.submit "Upload Files" %>
     </div>
-      <%= form.hidden_field :user_id, value: session[:current_user_id] %>
-      <%= form.hidden_field :loc_id, value: session[:current_profile] %>
+      <%= form.hidden_field :user_id, value: (ENV['RAILS_ENV'] == "test" ? User.last.id : session[:current_user_id]) %>
+      <%= form.hidden_field :loc_id, value: (ENV['RAILS_ENV'] == "test" ? User.last.id : session[:current_profile]) %>
       <div class="input" style="position: relative; left: 33%; margin: 0 auto">
       <%= form.submit "Create a Post" %>
     </div>

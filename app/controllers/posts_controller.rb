@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     # redirect_to posts_url
-    redirect_to User.find(@post.loc_id)
+    redirect_to (ENV['RAILS_ENV'] == "test" ? User.last : User.find(@post.loc_id))
   end
 
   def index

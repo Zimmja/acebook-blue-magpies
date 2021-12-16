@@ -4,7 +4,7 @@ RSpec.feature "Posts can be liked", type: :feature do
   before(:each) do
     sign_up
     visit "/posts"
-    new_post("Post 1", true)
+    new_post("Post 1", "New post", true)
   end
 
   scenario "User can click button to like a post" do
