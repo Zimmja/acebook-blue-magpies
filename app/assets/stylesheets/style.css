@@ -267,12 +267,25 @@ input[type=submit] {
 {
     padding: 5px;
 }
-
-.profile_pic_container_left{
-    height: 100%;
-    display: table;
-    float: left;
+.profile_inner_right {
+    color: #2e75b6;
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    float: right;
+    text-align: center;
+    padding: 10px;
 }
+
+
+.profile_pic
+{
+    border: 1px solid lightgrey;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
 .profile_pic_container {
     height: 100%;
     display: table-cell;
