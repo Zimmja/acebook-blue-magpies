@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create]
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+  # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
   def index
   end
 
@@ -46,10 +46,10 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  # private
 
-  def set_s3_direct_post
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-  end
+  # def set_s3_direct_post
+  #   @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+  # end
 
 end
