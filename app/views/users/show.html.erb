@@ -3,11 +3,6 @@
 <h1><%= current_user.id == @profile.id ? "Your wall" : "#{@profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s"} wall" %></h1>
 <div class="profile_header">
   <div class="profile_inner_header_left">
-    <div class="new_post_button"> 
-      <%= link_to new_post_path do %>
-        <% current_user.id == @profile.id ? "Post to your wall" : "Post to #{@profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s"} wall" %>
-      <% end %>
-    </div>
     <br>
     <br>
       <% @posts.reverse.each do |post| %>
@@ -33,10 +28,20 @@
         <% end %>
       <% end %>
     </div>
-
+<div class="profile_right_container">
   <div class="profile_inner_right">
     <%= image_tag url_for(@profile.image), class: "profile_pic" %>
+      <br>
+      <br>
+      <div class="new_post_button_profile"> 
+      <%= link_to new_post_path do %>
+        <% current_user.id == @profile.id ? "Post to your wall" : "Post to #{@profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s"} wall" %>
+      <% end %>
+      <br>
+      <br>
     </div>
+  </div>
+      
   <div class="profile_inner_header_right">
     <div class="post_container_text" style="text-align: center">
       <h3>Your Friends:</h3>
@@ -52,5 +57,6 @@
         <% end %>
       </ul>
     </div>
+  </div>
   </div>
 </div>
