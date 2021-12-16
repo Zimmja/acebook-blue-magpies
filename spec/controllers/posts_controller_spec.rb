@@ -2,10 +2,13 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   before(:each) do
-    User.create({:name => "test_name", :email => "test@email.com", :password => "hellohello"})
+    User.create({:name => "test_name", :email => "test@email.com", :password => "hellohello", :image => fixture_file_upload("Acebook_Profile.png")})
     session[:user_id] = User.last.id
   end
   describe "GET /new " do
+    it 'testing image' do
+      expect(User.count).to eq (1)
+    end
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
