@@ -176,14 +176,14 @@ body{
 
 .comment_container {
     text-align: left;
-    color: #2e75b6;
+    color: grey;
     border-radius: 10px;
     background: white;
     box-shadow: 2px 2px 2px lightgrey;
     border: 1px solid lightgrey;
     padding: 5px;
     height: 100%;
-    width: 90%;
+    width: 97%;
     margin-top: 10px;
     font-size: 14px;
 }
@@ -278,6 +278,7 @@ input[type=submit] {
     border: 1px solid lightgray;
     text-align: center;
     padding: 10px;
+    margin-bottom: 200px;
 }
 
 .profile_inner_header_right li {
@@ -484,5 +485,6 @@ input[type=submit]#image_button
     position: fixed;
     right: 30px;
     margin-top: 50px;
+    margin-bottom: 200px;
     align-items: center;
 }
