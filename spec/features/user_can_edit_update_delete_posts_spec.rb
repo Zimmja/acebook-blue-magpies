@@ -7,7 +7,6 @@ RSpec.feature "Modifying posts", type: :feature do
     @post_text = "Hello, world!"
     new_post(@post_text)
     first(:link, @post_text).click
-    # click_link @post_text
   end
 
   scenario "#User can edit posts" do

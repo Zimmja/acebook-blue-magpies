@@ -4,12 +4,12 @@
 <div class="form_container" style="">
   <%= form_for @post do |form| %>
     <div class="form_input">
-      <%= form.label :message %>
+      <span class="do_not_display"><%= form.label :message %></span>
       <%= form.text_area :message, placeholder: "Enter your message", rows: 7 %>
     </div>
     <br>
     <br>
-      <%= form.label :images %>
+      <span class="do_not_display"><%= form.label :images %></span>
       <%= form.file_field :images, multiple: true %>
       <div class="input" style="position: relative; margin: 0 auto;">
       <%= form.submit "Upload Files" %>
