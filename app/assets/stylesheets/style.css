@@ -286,51 +286,32 @@ input[type=submit] {
     border-radius: 50%;
 }
 
-.profile_pic_container {
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-}
-.profile_pic_inner {
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    border-radius: 50%;
-}
 .profile_inner_container{
     height: 100%;
     display: table;
     float: left;
 }
-.profile_pic_container_left h1{
-    color: #191970;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+
+.friend_container {
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
-.profile_pic_container_left h1 span{
-    font-weight: 800;
+
+
+.friend_image {
+    flex-basis: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.profile_navigation{
-    float: right;
-    height: 100%;
-    box-sizing: border-box;
+.friend_text {
+    font-size: 20px;
+    padding-left: 20px;
 }
-
-.profile_navigation a{
-    height: 100%;
-    display: table;
-    float: left;
-    margin-top: 5px;
-    margin-left: 3px;
-}
-
-.profile_navigation a li{
+.test li{
     display: table-cell;
     vertical-align: center;
     height: 100%;
