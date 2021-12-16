@@ -12,8 +12,13 @@ RSpec.feature "Posts can be liked", type: :feature do
   end
 
   scenario "Amount of likes for a post are displayed" do  # I have not found correct syntax to select from drop down menu to correct error
-    puts "Fix text in posts_can_be_liked_spec.rb"
-    select "Like", :from => "like[like_option]"
-    expect(page).to have_content '1'
+    # puts "Fix text in posts_can_be_liked_spec.rb"
+    3.times { apply_like }
+    expect(page).to have_content '3'
+  end
+
+  def apply_like
+    select "Love", :from => "like[like_option]"
+    click_button "Like"
   end
 end
