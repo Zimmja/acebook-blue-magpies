@@ -1,4 +1,4 @@
-<% session[:current_profile] = @profile.id %>
+<% session[:current_profile] = @user.id %>
 
 <h1><%= current_user.id == @profile.id ? "Your wall" : "#{@profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s"} wall" %></h1>
 <div class="profile_header">
@@ -15,7 +15,7 @@
           <div class="post_container" >
             <div class="post_container_user">
               <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image"%>
-              <%= post.name %> posted:
+              <%= link_to post.name, User.find(post.user_id) %> posted:
             </div>
             <hr>
             <div class="post_container_text">
@@ -26,7 +26,7 @@
             </div>
             <% post.comments.each do |comment| %>
               <div class="comment_container">
-                <%= comment.name %>: <%= comment.comment_body %>
+                <%= image_tag url_for(User.find(comment.user_id).image), class: "friend_image_small" %> <%= link_to comment.name, User.find(comment.user_id) %> commented: <%= comment.comment_body %>
               </div>
             <% end %>
           </div>

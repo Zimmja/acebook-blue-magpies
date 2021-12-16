@@ -9,9 +9,11 @@
 
 <div class="id_post_view">
   <% @posts.reverse.each do |post| %>
+  <% if post.loc_id == post.user_id %>
     <div class="post_container" >
       <div class="post_container_user">
-        <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image" %> <%= post.name class: "friend_text"%> posted:
+        <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image" %> 
+        <%= link_to post.name, User.find(post.user_id) %> posted:
       </div>
       <hr>
       <div class="post_container_text">
@@ -20,8 +22,11 @@
       <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
       <% post.comments.each do |comment| %>
         <div class="comment_container">
-          <%= comment.name %>: <%= comment.comment_body %>
+          <%= image_tag url_for(User.find(comment.user_id).image), class: "friend_image_small" %>
+          <%= link_to post.name, User.find(comment.user_id) %> commented:
+          <%= comment.comment_body %>
         </div>
+      <% end %>
       <% end %>
     </div>
   <% end %>
