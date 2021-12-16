@@ -10,7 +10,7 @@
 <div class="id_post_view">
   <% @posts.reverse.each do |post| %>
   <% if post.loc_id == post.user_id %>
-    <div class="post_container" >
+    <div class="post_container_public" >
       <div class="post_container_user">
         <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image" %> 
         <%= link_to post.name, User.find(post.user_id) %> posted:
@@ -27,7 +27,7 @@
           <%= comment.comment_body %>
         </div>
       <% end %>
-      <% end %>
     </div>
+    <% end %>
   <% end %>
 </div>

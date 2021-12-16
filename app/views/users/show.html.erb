@@ -1,4 +1,4 @@
-<% session[:current_profile] = @user.id %>
+<% session[:current_profile] = @profile.id %>
 
 <h1><%= current_user.id == @profile.id ? "Your wall" : "#{@profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s"} wall" %></h1>
 <div class="profile_header">
@@ -12,7 +12,7 @@
     <br>
       <% @posts.reverse.each do |post| %>
         <% if post.loc_id == @profile.id %>
-          <div class="post_container" >
+          <div class="post_container_private" >
             <div class="post_container_user">
               <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image"%>
               <%= link_to post.name, User.find(post.user_id) %> posted:

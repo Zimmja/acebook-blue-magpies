@@ -98,7 +98,7 @@ body{
     border-radius: 10px;
 }
 
-.post_container {
+.post_container_private {
     text-align: left;
     color: #2e75b6;
     border-radius: 10px;
@@ -107,6 +107,18 @@ body{
     margin: auto;
     height: 100%;
     width: 75%;
+    margin-top: 10px;
+}
+
+.post_container_public {
+    text-align: left;
+    color: #2e75b6;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    width: 50%;
     margin-top: 10px;
 }
 
@@ -124,6 +136,7 @@ body{
     height: 100%;
     width: 97%;
 }
+
 .post_container_text {
 
     text-align: left;
