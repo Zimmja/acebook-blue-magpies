@@ -4,28 +4,25 @@ class UsersController < ApplicationController
   end
 
   def new
-    shout "sign-up page (users: new) loaded"
     @user = User.new
   end
 
   def show
-    shout "show page loaded"
-    @user = User.find(params[:id])
+    @profile = User.find(params[:id])
     @posts = Post.all
     @users = User.all
-    #@user = User.find(session[:user_id])
   end
 
   def create
-    @user = User.new(user_params)
-    
+    @user = User.new(downcase_email(user_params))
+
     if @user.save
-      shout "saved new user"
       session[:user_id] = @user.id
-      login_url @user
+      session[:current_user_id] = @user.id
+      session[:current_user_name] = @user.name
+      # login_url @user
       redirect_to @user
     else
-      shout "failed to save new user"
       render :new
     end
   end
@@ -33,11 +30,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password) 
+    params.require(:user).permit(:name, :email, :password, :image) 
   end
 
-  def shout(message)
-    # puts "\n#{"="*35}\nPAY ATTENTION TO ME!\n#{message}\n#{"="*35}\n\n"
+  def downcase_email(params)
+    params[:email] = params[:email].downcase
+    return params
   end
 
   def require_login

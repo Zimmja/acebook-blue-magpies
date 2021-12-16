@@ -1,8 +1,11 @@
-<% session[:current_profile] = @user.id %>
+<% session[:current_profile] = @profile.id %>
 
-<h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> Profile</h1>
+<h1><%= @profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s" %> profile</h1>
 <div class="profile_header">
   <div class="profile_inner_header_left">
+    
+  <%= image_tag url_for(@profile.image), size: "150x150", :style => "float: right"%>
+    
   <%# <p>Your Wall</p> %>
   <div class="new_post_button"> 
     <%= link_to new_post_path do %>
@@ -16,6 +19,7 @@
         <% if post.loc_id == @user.id %>
           <div class="post_container" >
             <div class="post_container_user">
+              <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
               pic here <%= post.name %>:
             </div>
             <hr>

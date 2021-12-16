@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-    redirect_to posts_url
+    redirect_to User.find(@post.loc_id)
     else
       render :edit
     end
@@ -39,10 +39,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-
-    # render :posts_url
-    redirect_to posts_path
+    if session[:user_id] == @post.user_id
+      @post.destroy
+      redirect_to current_user
+    end
   end
   
   private

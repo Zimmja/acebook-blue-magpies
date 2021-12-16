@@ -1,4 +1,5 @@
 <% session[:current_profile] = session[:user_id] %>
+
 <h1>Public Post Feed</h1>
 <div class="new_post_button"> 
     <%= link_to new_post_path do %>
@@ -8,10 +9,10 @@
 
 <div class="id_post_view">
       <% @posts.reverse.each do |post| %>
-        <% if post.loc_id == post.user_id %>
           <div class="post_container" >
             <div class="post_container_user">
               pic here <%= post.name %>:
+              <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
             </div>
             <hr>
             <div class="post_container_text">

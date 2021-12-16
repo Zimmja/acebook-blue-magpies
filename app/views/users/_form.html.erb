@@ -20,9 +20,16 @@
         <div><%= message %></div>
       <% end %>
     </div>
+  
+    <div>
+      <%=form.label :Profile_Picture %>
+      <%= form.file_field :image %>
+    </div>
+
 
     <div class="input" style="position: relative; left: 33%; margin: 0 auto">
       <%= form.submit "Sign up!" %>
     </div>
+  
   <% end %>
 </div>
