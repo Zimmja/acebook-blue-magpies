@@ -1,17 +1,28 @@
 <% session[:current_profile] = session[:user_id] %>
+<div class="form_container">
 
-<h1> User name: <%= @post.name %> </h1>
-<h3>Message: <%= @post.message %> </h3>
+  <div class="post_container_private">
+    <div class="post_container_user">
+    <%#= image_tag url_for(User.find(post.user_id).image), class: "friend_image"%>
+    <%= @post.name %>
+  </div>
+  <hr>
+  <div class="post_container_text">
+    <%= @post.message %>
+  </div>
 <%= form_with model: [ @post, @post.likes.build ], local: true do |form| %>
-  <p>
+      <div class="post_container_likes">
     <%= form.hidden_field :user_id, value: session[:current_user_id] %>
     <%= form.select :like_option, [['Reacts'], ['Like', 'Like'], ['Love', 'Love'], ['Ha, Ha', 'Ha, Ha'], ['Sad', 'Sad']], {},
         :onchange=>"javasccript: this.form.submit();" %>
       <%#= found resource https://stackoverflow.com/questions/6959481/rails-trying-to-submit-a-form-onchange-of-dropdown %>
       <%#= the like goes to the DB, i.e. like id and like table gets larger, but like_option is not filling in on DB %>
     <%= form.submit "Like", hidden:true %>
-    <%= @post.likes.count %>
-  </p>
+
+      <%= @post.likes.count %>
+    </div>
+
+
 <% end %>
 
 <!--the next line is the old like button - it was going to a database table, but was not associating a user_id. -->
@@ -41,24 +52,26 @@
 <% end %>
 
 
-
+<div class="comment_container">
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>
     User <%= comment.name %>: <%= comment.comment_body %>
   </p>
 <% end %>
+</div>
 
-
-
+<div class="form_container">
 <%= form_with model: [ @post, @post.comments.build ], local: true do |form|  %>
   <p>
     <%= form.label :add_your_comments %><br>
     <%= form.text_area :comment_body %>
     <%= form.hidden_field :user_id, value: session[:current_user_id] %>
   </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
 
+    <%= form.submit %>
+
+<% end %>
+</div>
+</div>
+</div>

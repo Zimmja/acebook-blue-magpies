@@ -94,7 +94,6 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    /* background-color: rgb(160, 32, 70); */
     border-radius: 10px;
 }
 
@@ -108,6 +107,7 @@ body{
     height: 100%;
     width: 75%;
     margin-top: 10px;
+
 }
 
 .post_container_public {
