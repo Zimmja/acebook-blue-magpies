@@ -6,30 +6,24 @@
         <div><%= message %></div>
       <% end %>
     </div>
-
     <div class="form_input">
       <%= form.text_field :email, placeholder: "Enter your E-mail address" %>
       <% user.errors.full_messages_for(:email).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
-
     <div class="form_input">
       <%= form.password_field :password, placeholder: "Enter your password" %>
       <% user.errors.full_messages_for(:password).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
-  
     <div>
       <%=form.label :Profile_Picture %>
       <%= form.file_field :image %>
     </div>
-
-
     <div class="input" style="position: relative; left: 33%; margin: 0 auto">
       <%= form.submit "Sign up!" %>
     </div>
-  
   <% end %>
 </div>

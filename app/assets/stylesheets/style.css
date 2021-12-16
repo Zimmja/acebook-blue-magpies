@@ -6,14 +6,14 @@
     font-family: Montserrat;
 }
 
-.header{
+.header {
     width: 100%;
     height: 60px;
     display: block;
     background-color: #2e75b6;
 }
 
-.inner_header{
+.inner_header {
     width: 95%;
     height: 100%;
     display: block;
@@ -21,14 +21,14 @@
     /* background-color: yellow; */
 }
 
-.logo_container{
+.logo_container {
     height: 100%;
     display: table;
     float: left;
     /* background-color: pink; */
 }
 
-.logo_container h1{
+.logo_container h1 {
     color: #191970;
     height: 100%;
     display: table-cell;
@@ -38,27 +38,26 @@
     font-weight: 100;
 }
 
-.logo_container h1 span{
+.logo_container h1 span {
     font-weight: 800;
 }
 
-.navigation{
+.navigation {
     float: right;
     height: 100%;
 }
 
-.navigation ul{
+.navigation ul {
     height: 100%;
-    display: inline-block;
     float: left;
     padding: 0px;
 }
 
-.navigation ul:last-child{
+.navigation ul:last-child {
     padding-right: 5px;
 }
 
-.navigation ul li{
+.navigation ul li {
     display: inline-block;
     margin: 18px 5px 0px 5px;
     height: 100%;
@@ -99,7 +98,7 @@ body{
     border-radius: 10px;
 }
 
-.post_container{
+.post_container {
     text-align: left;
     color: #2e75b6;
     border-radius: 10px;
@@ -111,10 +110,11 @@ body{
     margin-top: 10px;
 }
 
-.post_container:last-child{
+.post_container:last-child {
 
     margin-bottom: 100px;
 }
+
 .post_container_user {
     text-align: left;
     color: #666666;
@@ -124,7 +124,7 @@ body{
     height: 100%;
     width: 97%;
 }
-.post_container_text{
+.post_container_text {
 
     text-align: left;
     color: #2e75b6;
@@ -135,14 +135,14 @@ body{
     height: 100%;
     width: 99%;
 }
-.post_container_text a:link{
+.post_container_text a:link {
     color: #2e75b6;
 }
-.post_container_text a:visited{
+.post_container_text a:visited {
     color: #2e75b6;
 }
 
-.post_container_text a:hover{
+.post_container_text a:hover {
     color: #191970;
     font-weight: bold;
 }
@@ -158,7 +158,7 @@ body{
     width: 99%;
 }
 
-.comment_container{
+.comment_container {
     text-align: left;
     color: #2e75b6;
     border-radius: 10px;
@@ -219,7 +219,7 @@ input[type=submit] {
     border: none;
 }
 
-.new_acct_button{
+.new_acct_button {
     margin: 5px;
     align-self: center;
     background-color: lightskyblue;
@@ -232,7 +232,8 @@ input[type=submit] {
     font-family: Montserrat;
     font-size: 16px;
 }
-.profile_header{
+
+.profile_header {
     width: 100%;
     height: 100%;
     display: block;
@@ -263,10 +264,10 @@ input[type=submit] {
     padding: 10px;
 }
 
-.profile_inner_header_right li
-{
+.profile_inner_header_right li {
     padding: 5px;
 }
+
 .profile_inner_right {
     color: #2e75b6;
     width: 25%;
@@ -278,15 +279,14 @@ input[type=submit] {
 }
 
 
-.profile_pic
-{
+.profile_pic {
     border: 1px solid lightgrey;
     width: 250px;
     height: 250px;
     border-radius: 50%;
 }
 
-.profile_inner_container{
+.profile_inner_container {
     height: 100%;
     display: table;
     float: left;
@@ -297,8 +297,6 @@ input[type=submit] {
     align-items: center;
     justify-content: center
 }
-
-
 
 .friend_image {
     flex-basis: 10%;
@@ -311,7 +309,8 @@ input[type=submit] {
     font-size: 20px;
     padding-left: 20px;
 }
-.test li{
+
+.test li {
     display: table-cell;
     vertical-align: center;
     height: 100%;
@@ -319,6 +318,7 @@ input[type=submit] {
     font-family: 'Montserrat', sans-serif;
     font-size: 9px;
 }
+
 .profile_edit_button {
     margin: 5px;
     align-self: center;
@@ -332,6 +332,7 @@ input[type=submit] {
     font-family: Montserrat;
     font-size: 9px;
 }
+
 .profile_create_button {
     margin: 5px;
     align-self: center;
@@ -346,20 +347,17 @@ input[type=submit] {
     font-size: 9px;
 }
 
-#navbar_logo
-{
+#navbar_logo {
     height: 60px;
 }
 
-h1, h2
-{
+h1, h2 {
     color: #203964;
     text-align: center;
     margin: 50px, 0px, 5px, 0px;
 }
 
-.new_post_button a
-{
+.new_post_button a {
     background-color: #191970;
     width: 50%;
     color: white;
@@ -377,12 +375,10 @@ h1, h2
     padding: 10px;
 }
 
-.new_post_button a:hover
-{
+.new_post_button a:hover {
     color: green;
 }
 
-hr
-{
+hr {
     border-top: 1px solid lightgrey;
 }
