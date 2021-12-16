@@ -1,7 +1,7 @@
 <div class="form_container">
   <%=form_for user, local: true do |form| %>
     <div class="form_input">
-    <%= form.label :name %> <br>
+      <%= form.label :name %> <br>
       <%= form.text_field :name, placeholder: "Enter your name" %>
       <% user.errors.full_messages_for(:name).each do |message| %>
         <div><%= message %></div>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="form_input">
-    <%= form.label :email %> <br>
+      <%= form.label :email %> <br>
       <%= form.text_field :email, placeholder: "Enter your E-mail address" %>
       <% user.errors.full_messages_for(:email).each do |message| %>
         <div><%= message %></div>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="form_input">
-    <%= form.label :password %> <br>
+      <%= form.label :password %> <br>
       <%= form.password_field :password, placeholder: "Enter your password" %>
       <% user.errors.full_messages_for(:password).each do |message| %>
         <div><%= message %></div>
@@ -25,7 +25,7 @@
     </div>
   
     <div>
-      <%=form.label :Profile_Picture %>
+      <%= form.label :image %>
       <%= form.file_field :image %>
     </div>
 
