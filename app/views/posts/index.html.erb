@@ -5,7 +5,7 @@
   <% @posts.reverse_each do |post| %>
     <% if post.loc_id == post.user_id %>
       <li>
-        <%= link_to post.message, post %>
+        <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
         <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
       </li>
     <% end %>

@@ -1,15 +1,16 @@
-<% session[:current_profile] = @user.id %>
+<% session[:current_profile] = @profile.id %>
 
 <h1>Welcome to <span style="color: #191970">Blue-Magpie Acebook!</span></h1>
-<h1><%= @user.name[-1, 1] == "s" ? "#{@user.name}'" : "#{@user.name}'s" %> profile</h1>
+<%= image_tag url_for(@profile.image), size: "150x150", :style => "float: right"%>
+<h1><%= @profile.name[-1, 1] == "s" ? "#{@profile.name}'" : "#{@profile.name}'s" %> profile</h1>
 
 <p>Your Wall</p>
 
   <div class="id_post_view">
     <% @posts.reverse.each do |post| %>
-      <% if post.loc_id == @user.id %>
+      <% if post.loc_id == @profile.id %>
         <div class="post_view">
-          User <%= post.name %>: <%= link_to post.message, post %>
+          <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
           <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
         </div>
       <% end %>
