@@ -1,18 +1,28 @@
 <header>
-<div class="container">
-  <nav>
-    <ul>
-      <% if !logged_in? %>
-      <li><%= link_to "Log in", login_url%></li>
-      <li><%= link_to "Sign up", new_user_url%></li>
-      <% end %>
-      <% if logged_in? %>
-      <li><h3><%= current_user.name %></h3></li>
-      <li><%= link_to "Posts", posts_url%></li>
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Log out", logout_path, method: :delete %></li>
-      <% end %>
-    </ul>
-  </nav>
-</div>
+
+    <nav>
+      <div class="header">
+        <div class="inner_header">
+          <div class="logo_container">
+            <%# <h1>BLUE<span>Magpies</span></h1> %>
+            <img id="navbar_logo" src="/Acebook.png"/>
+          </div>
+        <div class="navigation">
+          <ul>
+            <% if !logged_in? %>
+              <li><%= link_to "Log in", login_url%></li>
+              <li><%= link_to "Sign up", new_user_url%></li>
+            <% else %>
+              <li><%= link_to "New public post", new_post_path%></li>
+              <li><%= link_to "Posts", posts_url%></li>
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <% end %>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    </nav>
+
 </header>

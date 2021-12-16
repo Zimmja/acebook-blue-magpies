@@ -381,7 +381,7 @@
           null,
           null,
           1,
-          0,
+          8,
           null,
           null,
           1,
@@ -416,7 +416,7 @@
           null,
           null,
           1,
-          4,
+          53,
           4,
           4,
           null,
@@ -433,11 +433,11 @@
           1,
           null,
           1,
-          143,
+          709,
           null,
           null,
           1,
-          143,
+          481,
           null,
           null,
           1,
@@ -1065,8 +1065,24 @@
           null,
           null
         ]
+      },
+      "/Users/ginnythomas/Documents/Projects/Makers-Bootcamp/Team-Project/acebook-blue-magpies/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1639582926
+    "timestamp": 1639564513
   }
 }

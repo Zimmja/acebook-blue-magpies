@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Montserrat;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    display: block;
+    background-color: #2e75b6;
+}
+
+.inner_header{
+    width: 95%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    /* background-color: yellow; */
+}
+
+.logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+    /* background-color: pink; */
+}
+
+.logo_container h1{
+    color: #191970;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.logo_container h1 span{
+    font-weight: 800;
+}
+
+.navigation{
+    float: right;
+    height: 100%;
+}
+
+.navigation ul{
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding: 0px;
+}
+
+.navigation ul:last-child{
+    padding-right: 5px;
+}
+
+.navigation ul li{
+    display: inline-block;
+    margin: 18px 5px 0px 5px;
+    height: 100%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navigation a:link {
+    color: white;
+}
+
+/* visited link */
+.navigation a:visited {
+    color: white;
+}
+
+/* mouse over link */
+.navigation a:hover {
+    color: #191970;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+.inner_page {
+    margin-top: 20px;
+    padding: 5px;
+    width: 95%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    /* background-color: rgb(160, 32, 70); */
+    border-radius: 10px;
+}
+
+.post_container{
+    text-align: left;
+    color: #2e75b6;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    width: 75%;
+    margin-top: 10px;
+}
+
+.post_container:last-child{
+
+    margin-bottom: 100px;
+}
+.post_container_user {
+    text-align: left;
+    color: #666666;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    width: 97%;
+}
+.post_container_text{
+
+    text-align: left;
+    color: #2e75b6;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+    width: 99%;
+}
+.post_container_text a:link{
+    color: #2e75b6;
+}
+.post_container_text a:visited{
+    color: #2e75b6;
+}
+
+.post_container_text a:hover{
+    color: #191970;
+    font-weight: bold;
+}
+
+.post_container_likes {
+    text-align: left;
+    color: #999999;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+    width: 99%;
+}
+
+.comment_container{
+    text-align: left;
+    color: #2e75b6;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 5px 3px 2px lightgrey;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    height: 100%;
+    width: 90%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.form_container {
+    width: 60%;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    background: white;
+    padding: 5px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form_input [type=password] {
+    width: 95%;
+    padding: 10px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    float: center;
+}
+.form_input [type=text], textarea {
+    width: 95%;
+    padding: 10px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    float: center;
+}
+
+.form_input[type=text]:focus {
+    border-color: #191970;
+}
+
+input[type=submit] {
+    background-color: #191970;
+    width: 30%;
+    color: white;
+    margin: 5px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 20px;
+    float: none;
+    border: none;
+}
+
+.new_acct_button{
+    margin: 5px;
+    align-self: center;
+    background-color: lightskyblue;
+    border-radius: 4px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Montserrat;
+    font-size: 16px;
+}
+.profile_header{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: white;
+}
+
+.profile_inner_header_left {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    /* background-color: purple; */
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+.profile_inner_header_right {
+    color: #2e75b6;
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    float: right;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile_inner_header_right li
+{
+    padding: 5px;
+}
+
+.profile_pic_container_left{
+    height: 100%;
+    display: table;
+    float: left;
+}
+.profile_pic_container {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.profile_pic_inner {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.profile_inner_container{
+    height: 100%;
+    display: table;
+    float: left;
+}
+.profile_pic_container_left h1{
+    color: #191970;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.profile_pic_container_left h1 span{
+    font-weight: 800;
+}
+
+.profile_navigation{
+    float: right;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.profile_navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.profile_navigation a li{
+    display: table-cell;
+    vertical-align: center;
+    height: 100%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+}
+.profile_edit_button {
+    margin: 5px;
+    align-self: center;
+    background-color: lightblue;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Montserrat;
+    font-size: 9px;
+}
+.profile_create_button {
+    margin: 5px;
+    align-self: center;
+    background-color: lightblue;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Montserrat;
+    font-size: 9px;
+}
+
+#navbar_logo
+{
+    height: 60px;
+}
+
+h1, h2
+{
+    color: #203964;
+    text-align: center;
+    margin: 50px, 0px, 5px, 0px;
+}
+
+.new_post_button a
+{
+    background-color: #191970;
+    width: 50%;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 3px, 3px, #666666;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 20px;
+    float: center;
+    border: none;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    top: 20px;
+    padding: 10px;
+}
+
+.new_post_button a:hover
+{
+    color: green;
+}
+
+hr
+{
+    border-top: 1px solid lightgrey;
+}

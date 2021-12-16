@@ -1,17 +1,30 @@
 <% session[:current_profile] = session[:user_id] %>
 
-<ul id="post_list">
-
-  <% @posts.reverse_each do |post| %>
-    <% if post.loc_id == post.user_id %>
-      <li>
-        <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></p>
-      </li>
+<h1>Public Post Feed</h1>
+<div class="new_post_button"> 
+    <%= link_to new_post_path do %>
+      New post
     <% end %>
-  <% end %>
-</ul>
+</div>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="id_post_view">
+      <% @posts.reverse.each do |post| %>
+          <div class="post_container" >
+            <div class="post_container_user">
+              pic here <%= post.name %>:
+              <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
+            </div>
+            <hr>
+            <div class="post_container_text">
+            <%= link_to post.message, post %>
+            </div>
+            <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
+            <% post.comments.each do |comment| %>
+              <div class="comment_container">
+                <%= comment.name %>: <%= comment.comment_body %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>

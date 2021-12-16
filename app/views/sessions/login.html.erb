@@ -1,8 +1,16 @@
-<h1>Welcome to <span style="color: #191970">Blue-Magpie Acebook!</span></h1>
-<h3>Log In</h3>
+<h1>Welcome to <span style="color: #191970">Blue-Magpie Acebook!</span></h1><br>
+<h2>Log In</h2>
 
-<%= form_tag '/login', local: true do %>
-Email: <%= text_field_tag :email %><br>
-Password: <%= password_field_tag :password %><br>
-<%= submit_tag "Log In"  %>
-<% end %>
+<div class="form_container">
+  <%= form_tag '/login', local: true do %>
+    <div class="form_input">
+      <%= text_field_tag :email, "Enter your E-mail address" %><br>
+    </div>
+    <div class="form_input">
+      <%= password_field_tag :password, "Enter your password" %><br>
+    </div>
+    <div class="input" style="position: relative; left: 33%; margin: 0 auto">
+    <%= submit_tag "Log In" %>
+    </div>
+  <% end %>
+</div>
