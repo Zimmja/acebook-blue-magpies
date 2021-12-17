@@ -1,66 +1,56 @@
 <% session[:current_profile] = session[:user_id] %>
+<div class="form_container" style="background-color: lightgrey">
+  <div class="post_container_private" style="background-color: lightgrey">
+  <div class="comment_inner_header_left">
+    <%#= image_tag url_for(User.find(post.user_id).image), class: "friend_image"%>
+    <%= image_tag url_for(User.find(@post.user_id).image), class: "friend_image"%>
+    <%= @post.name  %> posted
+    <hr>
+    <div class="post_container_text">
+      <%= @post.message %><br>
+          <%(0...@post.images.count).each do |image| %>
+      <%= image_tag(@post.thumbnail(image)) %>
+    <% end %>
+    </div>
+    <%= form_with model: [ @post, @post.likes.build ], local: true do |form| %>
+      <div class="post_contai§r_likes">
+        <%= form.hidden_field :user_id, value: session[:current_user_id] %>
+        <%= form.select :like_option, [['Reacts'], ['Like', 'Like'], ['Love', 'Love'], ['Ha, Ha', 'Ha, Ha'], ['Sad', 'Sad']], {},
+            onchange: "this.form.submit();" %>
+        <span class="do_not_display"><%= form.submit "Like" %></span>
+        <%= @post.likes.count %>
+      </div>
+    <% end %>
+    <hr>
+    <br>
+      <h2>Comments</h2>
+        <% @post.comments.each do |comment| %>
+          <div class="comment_container">
+            <%= image_tag url_for(User.find(comment.user_id).image), class: "friend_image_small" %> <%= link_to comment.name, User.find(comment.user_id) %> commented: <%= comment.comment_body %>
+          </div>
+        <% end %>
 
-  <h1> User name: <%= @post.name %> </h1>
-  <h3>Message: <%= @post.message %> </h3>
-<%= form_with model: [ @post, @post.likes.build ], local: true do
-|form|  %>
-  <p>
-    <%= form.hidden_field :user_id, value: session[:current_user_id] %>
-    <%= form.select :like_option, [['Reacts'], ['Like', 'Like'], ['Love', 'Love'], ['Ha, Ha', 'Ha, Ha'], ['Sad', 'Sad']], {},
-        onchange: "this.form.submit();" %>
-      <%#= found resource https://stackoverflow.com/questions/6959481/rails-trying-to-submit-a-form-onchange-of-dropdown %>
-      <%#= the like goes to the DB, i.e. like id and like table gets larger, but like_option is not filling in on DB %>
-    <span class="do_not_display"><%= form.submit "Like" %></span>
-    <%= @post.likes.count %>
-  </p>
-<% end %>
+            <div class="form_container">
+      <%= form_with model: [ @post, @post.comments.build ], local: true do |form|  %>
+        <p>
+          <%= form.label :add_your_comments %><br>
+          <%= form.text_area :comment_body %>
+          <%= form.hidden_field :user_id, value: session[:current_user_id] %>
+        </p>
+          <%= form.submit class: "comment_button"%>
+      <% end %>
+    </div>
+      </div>
 
-<!--the next line is the old like button - it was going to a database table, but was not associating a user_id. -->
-<%#<%= button_to "Like_old", post_likes_path(@post), method: :post %>
-
-<%= button_to "Edit Post", edit_post_path %>
-<% if session[:user_id] == @post.user_id %>
-<br>
-<%= button_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
-<p>
-
-<h2>Images</h2>
-
-<%= form_for @post do |form| %>
-  <%= form.label :images %>
-  <%= form.file_field :images, multiple: true %>
-
-  <%= form.submit "Submit" %>
-<% end %>
-
-<br>
-<br>
-
-<%(0...@post.images.count).each do |image| %>
-<%= image_tag(@post.thumbnail(image)) %>
-<% end %>
-
-
-
-<h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    User <%= comment.name %>: <%= comment.comment_body %>
-  </p>
-<% end %>
-
-
-
-<%= form_with model: [ @post, @post.comments.build ], local: true do
-  |form|  %>
-  <p>
-    <%= form.label :add_your_comments %><br>
-    <%= form.text_area :comment_body %>
-    <%= form.hidden_field :user_id, value: session[:current_user_id] %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
+  <div class="comment_inner_header_right">
+    <br>
+    <% if session[:user_id] == @post.user_id %>
+      <%= button_to "Edit Post", edit_post_path, id: "edit_button" %>
+      <%= button_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, id: "delete_button" %>
+    <% end %>
+    <p>
+      </div>
+    <br>
+    <br>
+  </div>
+</div>

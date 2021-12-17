@@ -7,7 +7,6 @@
         <div><%= message %></div>
       <% end %>
     </div>
-
     <div class="form_input">
       <span class="do_not_display"><%= form.label :email %></span>
       <%= form.text_field :email, placeholder: "Enter your E-mail address" %>
@@ -15,7 +14,6 @@
         <div><%= message %></div>
       <% end %>
     </div>
-
     <div class="form_input">
       <span class="do_not_display"><%= form.label :password %></span>
       <%= form.password_field :password, placeholder: "Enter your password" %>
@@ -23,7 +21,6 @@
         <div><%= message %></div>
       <% end %>
     </div>
-  
     <div>
       <span class="do_not_display"><%= form.label :image %></span>
       <span style="margin-left: 5px;"><%= form.file_field :image %></span>
@@ -32,6 +29,5 @@
     <div class="input" style="position: relative; left: 33%; margin: 0 auto">
       <%= form.submit "Sign up!" %>
     </div>
-  
   <% end %>
 </div>

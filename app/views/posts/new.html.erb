@@ -7,18 +7,17 @@
       <span class="do_not_display"><%= form.label :message %></span>
       <%= form.text_area :message, placeholder: "Enter your message", rows: 7 %>
     </div>
-    <br>
-    <br>
-      <span class="do_not_display"><%= form.label :images %></span>
+      <%= form.label :images %>
       <%= form.file_field :images, multiple: true %>
-      <div class="input" style="position: relative; margin: 0 auto;">
+    <div class="input" style="position: relative; margin: 0 auto;">
       <%= form.submit "Upload Files" %>
     </div>
+
       <%= form.hidden_field :user_id, value: (ENV['RAILS_ENV'] == "test" ? User.last.id : session[:current_user_id]) %>
       <%= form.hidden_field :loc_id, value: (ENV['RAILS_ENV'] == "test" ? User.last.id : session[:current_profile]) %>
-      <div class="input" style="position: relative; left: 33%; margin: 0 auto">
+      <div class="input" style="margin: 0 auto">
       <%= form.submit "Create a Post" %>
     </div>
     <% end %>
-  <% end %>
-</div>
+<% end %>
+  </div>

@@ -1,5 +1,6 @@
 <% session[:current_profile] = session[:user_id] %>
 
+
 <h1>Public Post Feed</h1>
 <div class="new_post_button"> 
   <%= link_to new_post_path do %>
@@ -9,27 +10,32 @@
 
 <div class="id_post_view">
   <% @posts.reverse.each do |post| %>
-
-
-   <div class="post_container" >
+  <% if post.loc_id == post.user_id %>
+    <div class="post_container_public" >
       <div class="post_container_user">
-        pic here <%= post.name %>:
-        <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>
+        <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image" %> 
+        <%= link_to post.name, User.find(post.user_id) %> posted:
       </div>
-
-      <br>
-
+  
+      <hr>
+  
       <div class="post_container_text">
-        <%= link_to post.message, post %>
-          <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
-        <% post.comments.each do |comment| %>
-          <div class="comment_container">
-            <%= comment.name %>: <%= comment.comment_body %>
-          </div>
+      <%= link_to post.message, post %>
+       <br>
+       <%(0...post.images.count).each do |image| %>
+       <%= image_tag(post.thumbnail(image)) %>
         <% end %>
       </div>
-
+  
+      <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
+      <% post.comments.each do |comment| %>
+        <div class="comment_container">
+          <%= image_tag url_for(User.find(comment.user_id).image), class: "friend_image_small" %>
+          <%= link_to post.name, User.find(comment.user_id) %> commented:
+          <%= comment.comment_body %>
+        </div>
+      <% end %>
     </div>
-
+    <% end %>
   <% end %>
 </div>

@@ -51,3 +51,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simplecov', require: false, group: :test
+gem 'aws-sdk', '~> 2'
+gem 'figaro'
+gem 'fog-aws'
+gem 'carrierwave', '~> 2.0'
