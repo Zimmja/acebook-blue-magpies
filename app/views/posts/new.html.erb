@@ -6,8 +6,6 @@
     <div class="form_input">
       <%= form.text_area :message, placeholder: "Enter your message", rows: 7 %>
     </div>
-    <br>
-    <br>
       <%= form.label :images %>
       <%= form.file_field :images, multiple: true %>
     <div class="input" style="position: relative; margin: 0 auto;">
@@ -15,7 +13,7 @@
     </div>
       <%= form.hidden_field :user_id, value: session[:current_user_id] %>
       <%= form.hidden_field :loc_id, value: session[:current_profile] %>
-    <div class="input" style="position: relative; left: 33%; margin: 0 auto">
+    <div class="input" style="margin: 0 auto">
       <%= form.submit "Create a Post" %>
     </div>
     <% end %>

@@ -1,5 +1,6 @@
 <% session[:current_profile] = session[:user_id] %>
 
+
 <h1>Public Post Feed</h1>
 <div class="new_post_button"> 
   <%= link_to new_post_path do %>
@@ -18,6 +19,10 @@
       <hr>
       <div class="post_container_text">
       <%= link_to post.message, post %>
+       <br>
+       <%(0...post.images.count).each do |image| %>
+       <%= image_tag(post.thumbnail(image)) %>
+        <% end %>
       </div>
       <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
       <% post.comments.each do |comment| %>

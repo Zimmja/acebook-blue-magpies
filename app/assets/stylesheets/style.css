@@ -90,7 +90,7 @@ body{
 }
 
 .inner_page {
-    margin-top: 20px;
+    margin-top: 100px;
     padding: 5px;
     width: 95%;
     height: 100%;
@@ -384,7 +384,8 @@ h1, h2 {
 .new_post_button a {
     background-color: #191970;
     position: fixed;
-    width: 5%;
+    width: 10%;
+    width: 100px;
     color: white;
     border-radius: 4px;
     box-shadow: 3px, 3px, #666666;
@@ -394,7 +395,7 @@ h1, h2 {
     float: center;
     border: none;
     margin: 0 auto;
-    top: 20px;
+    top: 100px;
     padding: 10px;
 }
 
@@ -488,3 +489,44 @@ input[type=submit]#image_button
     margin-bottom: 200px;
     align-items: center;
 }
+
+input[type=submit] {
+    background: #3e3ed4;
+    background-image: -webkit-linear-gradient(top, #3e3ed4, #191970);
+    background-image: -moz-linear-gradient(top, #3e3ed4, #191970);
+    background-image: -ms-linear-gradient(top, #3e3ed4, #191970);
+    background-image: -o-linear-gradient(top, #3e3ed4, #191970);
+    background-image: linear-gradient(to bottom, #3e3ed4, #191970);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 3px 1px #00000088;
+    -moz-box-shadow: 1px 1px 3px 1px #00000088;
+    box-shadow: 1px 1px 3px 1px #00000088;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  input[type=submit]:hover {
+    background: #191970;
+    background-image: -webkit-linear-gradient(top, #191970, #3e3ed4);
+    background-image: -moz-linear-gradient(top, #191970, #3e3ed4);
+    background-image: -ms-linear-gradient(top, #191970, #3e3ed4);
+    background-image: -o-linear-gradient(top, #191970, #3e3ed4);
+    background-image: linear-gradient(to bottom, #191970, #3e3ed4);
+    text-decoration: none;
+    text-shadow: -1px -1px 1px black;
+  }
+
+  input[type=submit]:active {
+    background: #191970;
+    text-decoration: none;
+    text-shadow: -1px -1px 1px black;
+    -webkit-box-shadow: 0px 0px 2px 3px #00000066 inset;
+    -moz-box-shadow: 0px 0px 2px 3px #00000066 inset;
+    box-shadow: 0px 0px 2px 3px #00000066 inset;
+  }

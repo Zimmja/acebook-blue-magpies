@@ -3,7 +3,8 @@
   <div class="post_container_private" style="background-color: lightgrey">
   <div class="comment_inner_header_left">
     <%#= image_tag url_for(User.find(post.user_id).image), class: "friend_image"%>
-    <%= @post.name %>
+    <%= image_tag url_for(User.find(@post.user_id).image), class: "friend_image"%>
+    <%= @post.name  %> posted
     <hr>
     <div class="post_container_text">
       <%= @post.message %><br>
