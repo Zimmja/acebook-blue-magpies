@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def current_user
     return User.last if testing?
-    if !session[:user_id].nil? && User.count > 0 && User.last.id < session[:user_id]
+    if User.count == 0 || (!session[:user_id].nil? && User.last.id < session[:user_id])
       session[:user_id] = nil
     end
     @_current_user ||= User.find(session[:user_id]) if !!session[:user_id]
