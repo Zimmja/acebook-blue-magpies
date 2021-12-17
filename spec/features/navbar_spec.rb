@@ -31,7 +31,7 @@ RSpec.feature "", type: :feature do
     sign_up
     user = User.first
     check_link_path("Profile", "/users/#{user.id}")
-    expect(page).to have_content user.name
+    expect(page).to have_content "Your wall"
   end
 
   def check_link_path(link, path)
