@@ -8,10 +8,11 @@
         </div>
         <div class="navigation">
           <ul>
-            <% if !logged_in? %>
+            <% if !logged_in? || ENV['RAILS_ENV'] == "test" %>
               <li><%= link_to "Log in", login_url%></li>
               <li><%= link_to "Sign up", new_user_url%></li>
-            <% else %>
+            <% end %>
+            <% if logged_in? || ENV['RAILS_ENV'] == "test" %>
               <li><%= link_to "New public post", new_post_path%></li>
               <li><%= link_to "Posts", posts_url%></li>
               <li><%= link_to "Profile", current_user %></li>

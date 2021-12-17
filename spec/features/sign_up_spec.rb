@@ -17,7 +17,7 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   scenario "If no fields are filled out, displays the appropriate error messages" do
-    click_button "Enter details"
+    click_button "Sign up!"
     page_should_have_content([error_name, error_em_inv, error_pw_blank])
   end
 
@@ -36,13 +36,13 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "Name", with: "Rudolph"
     fill_in "Email", with: "rudolph@christmas.com"
     fill_in "Password", with: "shinynose12"
-    expect { click_button "Enter details"}.to change { User.count }.by(1)
-    expect(page).to have_content("Welcome")
+    attach_file("Image", "spec/fixtures/files/Acebook_Profile.png")
+    expect { click_button "Sign up!" }.to change { User.count }.by(1)
   end
 
   def test_field(field, with_text, expectation = null, expected = true)
     fill_in field, with: with_text
-    click_button "Enter details"
+    click_button "Sign up!"
     expect(page.has_content?(expectation)).to eq expected
   end
 

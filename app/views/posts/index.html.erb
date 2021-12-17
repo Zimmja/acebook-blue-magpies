@@ -16,7 +16,9 @@
         <%= image_tag url_for(User.find(post.user_id).image), class: "friend_image" %> 
         <%= link_to post.name, User.find(post.user_id) %> posted:
       </div>
+  
       <hr>
+  
       <div class="post_container_text">
       <%= link_to post.message, post %>
        <br>
@@ -24,6 +26,7 @@
        <%= image_tag(post.thumbnail(image)) %>
         <% end %>
       </div>
+  
       <div class="post_container_likes"><%= post.likes.count %> <%= (post.likes.count) == 1 ? "Like" : "Likes" %></div>
       <% post.comments.each do |comment| %>
         <div class="comment_container">
