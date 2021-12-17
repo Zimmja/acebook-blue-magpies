@@ -9,14 +9,14 @@
   <%# <p>Your Wall</p> %>
   <div class="new_post_button"> 
     <%= link_to new_post_path do %>
-      Post to this wall
+Post to this wall
     <% end %>
   </div>
   <br>
   <br>
     <div class="id_post_view">
       <% @posts.reverse.each do |post| %>
-        <% if post.loc_id == @user.id %>
+        <% if post.loc_id == @profile.id %>
           <div class="post_container" >
             <div class="post_container_user">
               <%= image_tag url_for(User.find(post.user_id).image), size: "50x50", :style => "border-radius: 100px;"%> User <%= post.name %>: <%= link_to post.message, post %>

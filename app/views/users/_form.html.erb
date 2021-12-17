@@ -1,6 +1,7 @@
 <div class="form_container">
   <%=form_for user, local: true do |form| %>
     <div class="form_input">
+      <span class="do_not_display"><%= form.label :name %></span>
       <%= form.text_field :name, placeholder: "Enter your name" %>
       <% user.errors.full_messages_for(:name).each do |message| %>
         <div><%= message %></div>
@@ -8,6 +9,7 @@
     </div>
 
     <div class="form_input">
+      <span class="do_not_display"><%= form.label :email %></span>
       <%= form.text_field :email, placeholder: "Enter your E-mail address" %>
       <% user.errors.full_messages_for(:email).each do |message| %>
         <div><%= message %></div>
@@ -15,6 +17,7 @@
     </div>
 
     <div class="form_input">
+      <span class="do_not_display"><%= form.label :password %></span>
       <%= form.password_field :password, placeholder: "Enter your password" %>
       <% user.errors.full_messages_for(:password).each do |message| %>
         <div><%= message %></div>
@@ -22,10 +25,9 @@
     </div>
   
     <div>
-      <%=form.label :Profile_Picture %>
-      <%= form.file_field :image %>
+      <span class="do_not_display"><%= form.label :image %></span>
+      <span style="margin-left: 5px;"><%= form.file_field :image %></span>
     </div>
-
 
     <div class="input" style="position: relative; left: 33%; margin: 0 auto">
       <%= form.submit "Sign up!" %>

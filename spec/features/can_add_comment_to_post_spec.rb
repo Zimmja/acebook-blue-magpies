@@ -2,11 +2,11 @@ RSpec.feature "", type: :feature do
     before(:each) do
       sign_up
       visit "/posts"
-      new_post("Post 1", true)
+      new_post("Hello World!", "New post", true)
     end
 
     scenario "can comment on post" do
-      expect(page).to have_content 'Post 1'
+      expect(page).to have_content 'Hello World!'
       expect(page).to have_button 'Create Comment'
     end
 

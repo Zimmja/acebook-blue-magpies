@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature "", type: :feature do
   scenario "Posts are displayed with newest first on user profile page" do
     sign_up
-    log_in
     user = User.first
     visit "/posts"
     new_post("Post 1")

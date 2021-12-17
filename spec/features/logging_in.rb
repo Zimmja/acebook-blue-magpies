@@ -3,4 +3,5 @@ def log_in
   fill_in "email", with: "rudolph@christmas.com"
   fill_in "password", with: "shinynose12"
   click_button "Log In"
+  expect(current_path).not_to eq "/login"
 end

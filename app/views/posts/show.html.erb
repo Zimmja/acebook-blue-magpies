@@ -7,10 +7,10 @@
   <p>
     <%= form.hidden_field :user_id, value: session[:current_user_id] %>
     <%= form.select :like_option, [['Reacts'], ['Like', 'Like'], ['Love', 'Love'], ['Ha, Ha', 'Ha, Ha'], ['Sad', 'Sad']], {},
-        :onchange=>"javasccript: this.form.submit();" %>
+        onchange: "this.form.submit();" %>
       <%#= found resource https://stackoverflow.com/questions/6959481/rails-trying-to-submit-a-form-onchange-of-dropdown %>
       <%#= the like goes to the DB, i.e. like id and like table gets larger, but like_option is not filling in on DB %>
-    <%= form.submit "Like", hidden:true %>
+    <span class="do_not_display"><%= form.submit "Like" %></span>
     <%= @post.likes.count %>
   </p>
 <% end %>

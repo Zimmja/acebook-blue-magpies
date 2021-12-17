@@ -6,10 +6,10 @@ RSpec.feature "Modifying posts", type: :feature do
     visit "/posts"
     @post_text = "Hello, world!"
     new_post(@post_text)
-    click_link @post_text
+    first(:link, @post_text).click
   end
 
-  scenario "User can edit posts" do
+  scenario "#User can edit posts" do
     click_button "Edit Post"
     edit_text = "Goodbye, world!"
     fill_in "Message", with: edit_text
@@ -17,7 +17,7 @@ RSpec.feature "Modifying posts", type: :feature do
     expect(page).to have_content(edit_text)
   end
 
-  scenario "User can delete posts" do
+  scenario "#User can delete posts" do
     click_button "Delete Post"
     visit "/posts"
     expect(page).not_to have_content(@post_text)
