@@ -52,13 +52,13 @@ Rails requires a Javascript runtime to work. The easiest way is to install Node 
 
 ## Contributors
 
-[Matt Zimmer](https://github.com/Zimmja)
-[Jacob Hanrahan](https://github.com/JacobCH93)
-[Simon Jacobs](https://github.com/smoni19)
-[Ginny Thomas](https://github.com/ginnyamazed)
-[Andrew Bird](https://github.com/AndyBird88)
-[Blessing Aliu](https://github.com/blessingaliu)
-[Caeser Ibrahim](https://github.com/caeserlondon)
+- [Matt Zimmer](https://github.com/Zimmja)
+- [Jacob Hanrahan](https://github.com/JacobCH93)
+- [Simon Jacobs](https://github.com/smoni19)
+- [Ginny Thomas](https://github.com/ginnyamazed)
+- [Andrew Bird](https://github.com/AndyBird88)
+- [Blessing Aliu](https://github.com/blessingaliu)
+- [Caeser Ibrahim](https://github.com/caeserlondon)
 
 ## Technologies
 
