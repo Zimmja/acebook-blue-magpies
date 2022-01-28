@@ -23,7 +23,8 @@
 .byebug_history
 
 # Gemfile.lock
-coverage
+/coverage
+/storage
 
 # Ignore application configuration
 /config/application.yml
